@@ -1,8 +1,11 @@
-# Pizzaria 404 - Guia do Avaliador (Web Frontend)
+# Pizzaria 404 - Guia do Avaliador (Web Back-end)
 
 Este documento descreve a arquitetura, as tecnologias e a estrutura de componentes da interface do projeto Pizzaria 404, além de detalhar o processo de execução local via Makefile. O projeto foi projetado com uma arquitetura desacoplada, utilizando um backend em Flask que atua como API RESTful e serve os arquivos estáticos do frontend construído em React.
 
 ---
+
+## Stack Tecnológica do Back-end
+
 
 ## Stack Tecnológica do Frontend
 
