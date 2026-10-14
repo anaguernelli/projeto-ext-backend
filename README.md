@@ -6,6 +6,54 @@ Este documento descreve a arquitetura, as tecnologias e a estrutura de component
 
 ## Stack Tecnológica do Back-end
 
+O back-end da Pizzaria 404 foi desenvolvido em **Python**, utilizando o framework **Flask** para implementar uma API REST responsável por processar as requisições, executar as regras de negócio e realizar a comunicação entre a interface do usuário e os dados da aplicação.
+
+### Tecnologias Utilizadas
+
+- **Python:** linguagem de programação utilizada para implementar a lógica do servidor e as funcionalidades do sistema.
+- **Flask:** framework responsável pela criação do servidor e das rotas da API REST.
+- **SQLite:** banco de dados utilizado para armazenar informações relacionadas aos usuários, produtos e pedidos.
+- **Flask-CORS:** biblioteca que permite configurar o compartilhamento de recursos entre diferentes origens, facilitando a comunicação entre o front-end e o back-end durante o desenvolvimento.
+- **PyJWT:** biblioteca utilizada para trabalhar com tokens JWT (*JSON Web Tokens*), empregados na autenticação e no controle de acesso às funcionalidades protegidas.
+- **Cryptography:** biblioteca que disponibiliza recursos para operações criptográficas.
+
+### API REST
+
+A aplicação disponibiliza endpoints HTTP que permitem ao front-end consultar informações e solicitar operações ao back-end. As respostas da API são retornadas em formato JSON, permitindo que os dados sejam processados e apresentados pela interface desenvolvida em React.
+
+Entre as principais funcionalidades disponibilizadas pela API, destacam-se:
+
+- **Autenticação de usuários:** cadastro, login e logout.
+- **Consulta ao cardápio:** listagem de produtos disponíveis e opções de personalização das pizzas.
+- **Gerenciamento do carrinho:** consulta dos itens adicionados e inclusão ou remoção de produtos.
+- **Gerenciamento de pedidos:** finalização de compras, consulta de detalhes, histórico e acompanhamento de status.
+- **Cupons e avaliações:** validação de cupons de desconto e consulta ou registro de avaliações.
+- **Administração:** gerenciamento de produtos, pedidos, cupons e métricas de vendas, conforme as permissões de acesso.
+
+### Principais Endpoints
+
+| Método HTTP | Endpoint | Finalidade |
+|---|---|---|
+| POST | `/api/cadastro` | Cadastrar um usuário |
+| POST | `/api/login` | Autenticar um usuário |
+| GET | `/api/produtos` | Consultar os produtos disponíveis |
+| GET | `/api/carrinho` | Consultar o carrinho do usuário autenticado |
+| POST | `/api/pedido` | Adicionar um item ao pedido |
+| POST | `/api/pedido/finalizar` | Finalizar um pedido |
+| GET | `/api/pedidos/historico` | Consultar o histórico de pedidos |
+| GET | `/api/avaliacoes` | Consultar avaliações |
+
+### Organização do Back-end
+
+O código foi organizado em módulos com responsabilidades distintas, favorecendo a separação das funcionalidades e a manutenção do sistema:
+
+- **Routes:** define os endpoints e direciona as requisições para os componentes responsáveis pelo processamento.
+- **Controllers:** recebem as requisições e coordenam o tratamento das operações.
+- **Services:** concentram as regras de negócio da aplicação.
+- **Repositories:** realizam a comunicação com o banco de dados SQLite.
+- **Security:** contém mecanismos de autenticação e controle de acesso, incluindo a validação de tokens JWT.
+
+Essa organização permite separar a comunicação HTTP, as regras de negócio e o acesso aos dados, tornando o código mais organizado e facilitando futuras melhorias na aplicação.
 
 ## Stack Tecnológica do Frontend
 
